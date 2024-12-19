@@ -4,7 +4,7 @@ namespace STUDMANAG.DTO
 {
     public class RoleDto : TimeEntityDto
     {
-        public string RoleName { get; set; } = string.Empty;
-        public string RoleDescription { get; set; } = string.Empty;
+        public string RoleName { get; set; }
+        public string RoleDescription { get; set; }
     }
 }
