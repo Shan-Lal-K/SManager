@@ -1,8 +1,8 @@
-﻿using STUDMANAG.DTO.BaseDto;
+﻿using STUDMANAG.Modal.Basemodal;
 
-namespace STUDMANAG.DTO
+namespace STUDMANAG.Modal
 {
-    public class StudentDto : TimeEntityDto
+    public class StudentEntity : TimeEntity
     {
         public string FirstName { get; set; }
         public string? MiddleName { get; set; }
@@ -18,6 +18,5 @@ namespace STUDMANAG.DTO
         public string? Photo { get; set; }
         public string? GuardianName { get; set; }
         public string? GuardianEmail { get; set; }
-
     }
 }
