@@ -15,5 +15,10 @@ namespace STUDMANAG.SContext
         public DbSet<PrincipalEntity> Principals { get; set; }
         public DbSet<SchoolEntity> Schools { get; set; }
         public DbSet<StudentAcademicDetail> StudentAcademicDetails { get; set; }
+        public DbSet<StudentEntity> StudentEntities { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
+        public DbSet<TeacherEntity> Teachers { get; set; }
+        public DbSet<TeacherSubjectDetails> TeacherSubjectDetails { get; set; }
+
     }
 }
