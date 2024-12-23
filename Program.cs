@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using STUDMANAG.SContext;
+using STUDMANAG.Services.AccountsService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,11 @@ builder.Services.AddDbContext<SDbcontext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddScoped<IAccountsService, AccountsServices>();
+
+//Registering AutoMapper
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 var app = builder.Build();
 
