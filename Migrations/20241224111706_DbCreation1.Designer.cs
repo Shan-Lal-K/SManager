@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using STUDMANAG.SContext;
 
@@ -11,9 +12,10 @@ using STUDMANAG.SContext;
 namespace STUDMANAG.Migrations
 {
     [DbContext(typeof(SDbcontext))]
-    partial class SDbcontextModelSnapshot : ModelSnapshot
+    [Migration("20241224111706_DbCreation1")]
+    partial class DbCreation1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,9 +43,6 @@ namespace STUDMANAG.Migrations
 
                     b.Property<DateTime?>("DeletedTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("LastModifiedId")
                         .IsRequired()
@@ -88,9 +87,6 @@ namespace STUDMANAG.Migrations
                     b.Property<DateTime?>("DeletedTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("LastModifiedId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -126,9 +122,6 @@ namespace STUDMANAG.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<bool>("IsTwoFactor")
                         .HasColumnType("bit");
@@ -193,9 +186,6 @@ namespace STUDMANAG.Migrations
                     b.Property<DateTime?>("DeletedTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("LastModifiedId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -234,9 +224,6 @@ namespace STUDMANAG.Migrations
                     b.Property<string>("ExamName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("LastModifiedId")
                         .IsRequired()
@@ -278,9 +265,6 @@ namespace STUDMANAG.Migrations
 
                     b.Property<int?>("ForClassId")
                         .HasColumnType("int");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("LastModifiedId")
                         .IsRequired()
@@ -352,9 +336,6 @@ namespace STUDMANAG.Migrations
 
                     b.Property<int?>("Gender")
                         .HasColumnType("int");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("LastModifiedId")
                         .IsRequired()
@@ -428,9 +409,6 @@ namespace STUDMANAG.Migrations
                     b.Property<int?>("FoundedYear")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("LastModifiedId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -494,9 +472,6 @@ namespace STUDMANAG.Migrations
 
                     b.Property<DateTime?>("DeletedTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("LastModifiedId")
                         .IsRequired()
@@ -572,9 +547,6 @@ namespace STUDMANAG.Migrations
                     b.Property<string>("GuardianName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("LastModifiedId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -619,9 +591,6 @@ namespace STUDMANAG.Migrations
 
                     b.Property<DateTime?>("DeletedTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("LastModifiedId")
                         .IsRequired()
@@ -702,9 +671,6 @@ namespace STUDMANAG.Migrations
                     b.Property<int?>("Gender")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("LastModifiedId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -749,9 +715,6 @@ namespace STUDMANAG.Migrations
 
                     b.Property<DateTime?>("DeletedTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("LastModifiedId")
                         .IsRequired()

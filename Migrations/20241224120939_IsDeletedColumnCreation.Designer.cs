@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using STUDMANAG.SContext;
 
@@ -11,9 +12,10 @@ using STUDMANAG.SContext;
 namespace STUDMANAG.Migrations
 {
     [DbContext(typeof(SDbcontext))]
-    partial class SDbcontextModelSnapshot : ModelSnapshot
+    [Migration("20241224120939_IsDeletedColumnCreation")]
+    partial class IsDeletedColumnCreation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
