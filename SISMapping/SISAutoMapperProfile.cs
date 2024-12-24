@@ -8,19 +8,19 @@ namespace STUDMANAG.SISMapping
     {
         public SISAutoMapperProfile()
         {
-            CreateMap<AspUsers, AspUsersDto>();
-            CreateMap<AspRoles, RoleDto>();
-            CreateMap<AspUserRoleDetailsEntity, AspUserRoleDetailsEntity>();
-            CreateMap<ClassDetailsEntity, ClassDetailsDto>();
-            CreateMap<ExamDetails, ExamDetailsDto>();
-            CreateMap<Exam, ExamDto>();
-            CreateMap<PrincipalEntity, PrincipalDto>();
-            CreateMap<SchoolEntity, SchoolDto>();
-            CreateMap<StudentAcademicDetail, StudentAcademicDetailDto>();
-            CreateMap<StudentEntity, StudentDto>();
-            CreateMap<Subject, SubjectDto>();
-            CreateMap<TeacherEntity, TeacherDto>();
-            CreateMap<TeacherSubjectDetails, TeacherSubjectDetailsDto>();
+            CreateMap<AspUsers, AspUsersDto>().ReverseMap();
+            CreateMap<AspRoles, RoleDto>().ReverseMap();
+            CreateMap<AspUserRoleDetailsEntity, AspUserRoleDetailsEntity>().ReverseMap();
+            CreateMap<ClassDetailsEntity, ClassDetailsDto>().ReverseMap();
+            CreateMap<ExamDetails, ExamDetailsDto>().ReverseMap();
+            CreateMap<Exam, ExamDto>().ReverseMap();
+            CreateMap<PrincipalEntity, PrincipalDto>().ReverseMap();
+            CreateMap<SchoolEntity, SchoolDto>().ReverseMap();
+            CreateMap<StudentAcademicDetail, StudentAcademicDetailDto>().ReverseMap();
+            CreateMap<StudentEntity, StudentDto>().ReverseMap();
+            CreateMap<Subject, SubjectDto>().ReverseMap();
+            CreateMap<TeacherEntity, TeacherDto>().ReverseMap();
+            CreateMap<TeacherSubjectDetails, TeacherSubjectDetailsDto>().ReverseMap();
         }
     }
 }

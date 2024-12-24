@@ -15,7 +15,7 @@ namespace STUDMANAG.Controllers
         private readonly IAccountsService _accountsService;
         private readonly SDbcontext _context;
         private readonly IMapper _mapper;
-        public AccountsController(IAccountsService accountsService_, SDbcontext context_,IMapper mapper_)
+        public AccountsController(IAccountsService accountsService_, SDbcontext context_, IMapper mapper_)
         {
             _context = context_;
             _accountsService = accountsService_;
@@ -32,17 +32,20 @@ namespace STUDMANAG.Controllers
             {
                 return BadRequest("Password Is Required");
             }
-            PasswordHashing(Dto.Password,out byte[] PasswordHash , out byte[] PasswordSalt);
+            PasswordHashing(Dto.Password, out byte[] PasswordHash, out byte[] PasswordSalt);
             var InsertData = _mapper.Map<AspUsers>(Dto);
+            InsertData.PasswordHash = PasswordHash;
+            InsertData.PasswordSalt = PasswordSalt;
             _context.AspUsers.Add(InsertData);
+            _context.SaveChanges();
             //AspUsers data = new AspUsers();
             return Ok("Account Created");
         }
 
-        private void PasswordHashing(string Password ,out byte[] Hash ,out byte[] PasswordSalt)
+        private void PasswordHashing(string Password, out byte[] Hash, out byte[] PasswordSalt)
         {
-            using (var hmac =new HMACSHA512()) 
-            { 
+            using (var hmac = new HMACSHA512())
+            {
                 PasswordSalt = hmac.Key;
                 Hash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(Password));
             }
