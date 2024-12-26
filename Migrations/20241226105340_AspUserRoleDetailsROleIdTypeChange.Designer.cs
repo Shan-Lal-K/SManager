@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using STUDMANAG.SContext;
 
@@ -11,9 +12,10 @@ using STUDMANAG.SContext;
 namespace STUDMANAG.Migrations
 {
     [DbContext(typeof(SDbcontext))]
-    partial class SDbcontextModelSnapshot : ModelSnapshot
+    [Migration("20241226105340_AspUserRoleDetailsROleIdTypeChange")]
+    partial class AspUserRoleDetailsROleIdTypeChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,9 +73,6 @@ namespace STUDMANAG.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("AspRoleId")
-                        .HasColumnType("int");
 
                     b.Property<string>("AspUserId")
                         .IsRequired()

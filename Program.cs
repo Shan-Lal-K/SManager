@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using STUDMANAG.SContext;
 using STUDMANAG.Services.AccountsService;
+using STUDMANAG.Services.RoleAspUserDetailsService;
 using STUDMANAG.Services.RolesService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +21,7 @@ builder.Services.AddDbContext<SDbcontext>(options =>
 
 builder.Services.AddScoped<IAccountsService, AccountsServices>();
 builder.Services.AddScoped<IRolesService, RolesServices>();
+builder.Services.AddScoped<IRoleBasedUserDetailsService, RoleBasedUserDetailsService>();
 
 //Registering AutoMapper
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
