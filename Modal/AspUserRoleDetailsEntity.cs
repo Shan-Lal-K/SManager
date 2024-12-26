@@ -5,6 +5,6 @@ namespace STUDMANAG.Modal
     public class AspUserRoleDetailsEntity : TimeEntity
     {
         public string AspUserId { get; set; } // GUID ID CREATED WHEN CREATING A USER 
-        public string AspRoleId { get; }
+        public int AspRoleId { get; set; }
     }
 }

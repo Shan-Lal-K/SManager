@@ -36,7 +36,7 @@ namespace STUDMANAG.Controllers
             }
         }
 
-        [HttpDelete("DELETEROLE")]
+        [HttpDelete("DELETEROLE/{id}")]
         [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -60,7 +60,7 @@ namespace STUDMANAG.Controllers
             }
         }
 
-        [HttpGet("GETROLEBYID")]
+        [HttpGet("GETROLEBYID/{id}")]
         [Authorize]
         [ProducesResponseType(typeof(RoleDto), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(int), (int)HttpStatusCode.BadRequest)]
@@ -114,7 +114,7 @@ namespace STUDMANAG.Controllers
         [Authorize]
         [ProducesResponseType(typeof(RoleDto), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(int), (int)HttpStatusCode.BadRequest)]
-        [ProducesResponseType(typeof(int), (int)HttpStatusCode.Unauthorized)]
+        //[ProducesResponseType(typeof(int), (int)HttpStatusCode.Unauthorized)]
         public async Task<IActionResult> UPDATEROLE(RoleDto Dto)
         {
             try
