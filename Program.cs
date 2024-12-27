@@ -3,6 +3,7 @@ using STUDMANAG.SContext;
 using STUDMANAG.Services.AccountsService;
 using STUDMANAG.Services.RoleAspUserDetailsService;
 using STUDMANAG.Services.RolesService;
+using STUDMANAG.Services.SchoolManagmentService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,7 @@ builder.Services.AddDbContext<SDbcontext>(options =>
 builder.Services.AddScoped<IAccountsService, AccountsServices>();
 builder.Services.AddScoped<IRolesService, RolesServices>();
 builder.Services.AddScoped<IRoleBasedUserDetailsService, RoleBasedUserDetailsService>();
+builder.Services.AddScoped<ISchoolManagmentService, SchoolManagmentServices>();
 
 //Registering AutoMapper
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
