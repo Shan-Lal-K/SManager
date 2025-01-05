@@ -97,6 +97,60 @@ namespace STUDMANAG.Controllers
             }
         }
 
+        [HttpGet("GetSchoolById")]
+        [Authorize]
+        [ProducesResponseType(typeof(SchoolDto), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.BadRequest)]
+        //[ProducesResponseType(typeof(int), (int)HttpStatusCode.BadRequest)]
+        //[ProducesResponseType(typeof(BadRequestResult), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> GetSchoolById (int id)
+        {
+            try
+            {
+                var result = _schoolService.GetSchoolById(id).Result;
+                if(result.Id == 0)
+                {
+                    return BadRequest("Role with the specified ID was not found ");
+                }
+                else
+                {
+                    return Ok(result);
+                }
+            }
+            catch
+            {
+                //return BadRequest
+                return NotFound("No Data Found");
+            }
+            //var result = _schoolService.GetSchoolById(id).Result;
+            //return result;
+
+        }
+
+        [HttpGet("GetAllSchool")]
+        [Authorize]
+        [ProducesResponseType(typeof(List<SchoolDto>) , (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(int), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> GetAllSchool()
+        {
+            try
+            {
+                var resultList = _schoolService.GetAllSchool().Result;
+                if (resultList.Count == 0)
+                {
+                    return BadRequest("No Data Exists");
+                }
+                else
+                {
+                    return Ok(resultList);
+                }
+            }
+            catch(Exception ex) 
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
 
     }
 }
