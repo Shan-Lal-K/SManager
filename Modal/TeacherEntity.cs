@@ -19,5 +19,6 @@ namespace STUDMANAG.Modal
         public int Qualification { get; set; }
         public int Experience { get; set; }
         public int? AspUserId { get; set; } // Id of User In ASpUsersTable 
+        public int SchoolId { get; set; }
     }
 }
