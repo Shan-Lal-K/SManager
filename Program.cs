@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using STUDMANAG.SContext;
 using STUDMANAG.Services.AccountsService;
+using STUDMANAG.Services.ExamManageService;
 using STUDMANAG.Services.PrincipalManagmentService;
 using STUDMANAG.Services.RoleAspUserDetailsService;
 using STUDMANAG.Services.RolesService;
@@ -31,6 +32,7 @@ builder.Services.AddScoped<ISchoolManagmentService, SchoolManagmentServices>();
 builder.Services.AddScoped<IPrincipalService, PrincipalService>();
 builder.Services.AddScoped<ITeacherManagmentService, TeacherManagmentService>();
 builder.Services.AddScoped<IStudentManagmentService, StudentManagmentService>();
+builder.Services.AddScoped<IExamManagmentService, ExamManagmentService>();
 
 //Registering AutoMapper
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
