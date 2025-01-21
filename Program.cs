@@ -5,6 +5,7 @@ using STUDMANAG.Services.PrincipalManagmentService;
 using STUDMANAG.Services.RoleAspUserDetailsService;
 using STUDMANAG.Services.RolesService;
 using STUDMANAG.Services.SchoolManagmentService;
+using STUDMANAG.Services.StudentManage;
 using STUDMANAG.Services.TeacherManagment;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +30,7 @@ builder.Services.AddScoped<IRoleBasedUserDetailsService, RoleBasedUserDetailsSer
 builder.Services.AddScoped<ISchoolManagmentService, SchoolManagmentServices>();
 builder.Services.AddScoped<IPrincipalService, PrincipalService>();
 builder.Services.AddScoped<ITeacherManagmentService, TeacherManagmentService>();
+builder.Services.AddScoped<IStudentManagmentService, StudentManagmentService>();
 
 //Registering AutoMapper
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
